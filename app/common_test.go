@@ -233,6 +233,7 @@ func NewTestDnAppDVM(t *testing.T, logOpts ...log.Option) (*DnServiceApp, string
 
 	dvmAddr, dvmPort, dvmPortErr := server.FreeTCPAddr()
 	require.NoError(t, dvmPortErr, "getting free TCP port for DVM communication")
+	dvmAddr = fmt.Sprintf("tcp://127.0.0.1:%s", dvmPort)
 
 	// create VM config
 	config := &vmConfig.VMConfig{
