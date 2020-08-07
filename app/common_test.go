@@ -259,7 +259,7 @@ func NewTestDnAppDVM(t *testing.T, logOpts ...log.Option) (*DnServiceApp, string
 	app.vmKeeper.StartDSServer(dsContext)
 
 	// start DVM
-	dvmStop := tests.LaunchDVMWithNetTransport(t, dvmPort, dsPort, false)
+	dvmStop := tests.LaunchDVMWithNetTransport(t, dvmPort, dsPort, true)
 
 	stopFunc := func() {
 		dvmStop()
